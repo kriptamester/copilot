@@ -19,7 +19,6 @@ namespace CoPilot
         public RangeNode<float> esPctQuit = new RangeNode<float>(0f, 0f, 100f);
         public ToggleNode autoQuitGuardian = new ToggleNode(false);
         public RangeNode<float> guardianHpPct = new RangeNode<float>(35f, 0f, 100f);
-
         #endregion
 
         #region Mirage Archer
@@ -75,7 +74,6 @@ namespace CoPilot
         public ToggleNode vortexFrostbolt = new ToggleNode(true);
         public RangeNode<int> vortexDelay = new RangeNode<int>(1800, 500, 1900);
         public RangeNode<int> vortexRange = new RangeNode<int>(300, 100, 1000);
-
         #endregion
 
         #region BloodRage
@@ -110,8 +108,6 @@ namespace CoPilot
         public ToggleNode autoAttackLeftMouseCheck = new ToggleNode(true);
         public HotkeyNode autoAttackPickItKey = new HotkeyNode(Keys.Space);
         public RangeNode<int> autoAttackRange = new RangeNode<int>(500, 100, 2000);
-
-
         #endregion
 
         #region Auto Summon
@@ -141,6 +137,11 @@ namespace CoPilot
         public ToggleNode bladeVortex = new ToggleNode(false);
         public RangeNode<int> bladeVortexRange = new RangeNode<int>(300, 100, 1000);
         public RangeNode<int> bladeVortexCooldown = new RangeNode<int>(2750, 100, 5000);
+        #endregion
+
+        #region Plague Bearer
+        public ToggleNode plagueBearer = new ToggleNode(false);
+        public RangeNode<int> plagueBearerRange = new RangeNode<int>(300, 100, 1000);
         #endregion
 
         #region Blade Blast

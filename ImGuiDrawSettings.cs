@@ -573,6 +573,25 @@ namespace CoPilot
 
             try
             {
+                // Plague Bearer
+                if (CoPilot.instance.Settings.plagueBearer)
+                    ImGui.PushStyleColor(ImGuiCol.Header, green);
+                else
+                    ImGui.PushStyleColor(ImGuiCol.Header, red);
+                ImGui.PushID(23);
+                if (ImGui.TreeNodeEx("Plague Bearer", collapsingHeaderFlags))
+                {
+                    CoPilot.instance.Settings.plagueBearer.Value = ImGuiExtension.Checkbox("Enabled", CoPilot.instance.Settings.plagueBearer.Value);
+                    CoPilot.instance.Settings.plagueBearerRange.Value = ImGuiExtension.IntSlider("Enemy Range", CoPilot.instance.Settings.plagueBearerRange);
+                }
+            }
+            catch (Exception e)
+            {
+                CoPilot.instance.LogError(e.ToString());
+            }
+
+            try
+            {
                 if (CoPilot.instance.Settings.bladeBlast)
                     ImGui.PushStyleColor(ImGuiCol.Header, green);
                 else
