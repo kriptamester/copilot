@@ -1002,30 +1002,6 @@ namespace CoPilot
                         }
                         #endregion
 
-                        #region Plague Bearer
-                        if (Settings.plagueBearer)
-                        {
-                            try
-                            {
-                                if (skill.Id == SkillInfo.plagueBearer.Id)
-                                {
-                                    if (GetMonsterWithin(Settings.plagueBearerRange) > 0 && buffs.Exists(x => x.Name == "corrosive_shroud_at_max_damage" && x.Charges >= 1))
-                                    {
-                                        KeyPress(GetSkillInputKey(skill.SkillSlotIndex));
-                                    }
-                                    else if (GetMonsterWithin(Settings.plagueBearerRange) <= 0 && buffs.Exists(x => x.Name == "corrosive_shroud_aura" && x.Charges >= 1))
-                                    {
-                                        KeyPress(GetSkillInputKey(skill.SkillSlotIndex));
-                                    }                                    
-                                }
-                            }
-                            catch (Exception e)
-                            {
-                                LogError(e.ToString());
-                            }
-                        }
-                        #endregion
-
                         #region Blade Blast
                         if (Settings.bladeBlast)
                         {
