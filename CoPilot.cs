@@ -1009,7 +1009,11 @@ namespace CoPilot
                             {
                                 if (skill.Id == SkillInfo.plagueBearer.Id)
                                 {
-                                    if (GetMonsterWithin(Settings.plagueBearerRange) > 0 && buffs.Exists(x => x.Name == "corrosive_shroud_at_max_damage" && x.Charges >= 1))
+                                    if (!buffs.Exists(x => x.Name == "corrosive_shroud_at_max_damage") && !buffs.Exists(x => x.Name == "corrosive_shroud_aura") && !buffs.Exists(x => x.Name == "corrosive_shroud_accumulating_damage"))
+                                    {
+                                        KeyPress(GetSkillInputKey(skill.SkillSlotIndex));
+                                    }
+                                    else if (GetMonsterWithin(Settings.plagueBearerRange) > 0 && buffs.Exists(x => x.Name == "corrosive_shroud_at_max_damage" && x.Charges >= 1))
                                     {
                                         KeyPress(GetSkillInputKey(skill.SkillSlotIndex));
                                     }
